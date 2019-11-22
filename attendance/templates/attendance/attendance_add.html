@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content%}
+{% load crispy_forms_tags %}
+<h2>Peer Tutor Attendance Form</h2>
+<!--<form method="post" action="{% url 'peertotur:document_detail' %}" entype="multipart/form-data"> {% csrf_token %}
+<input type="file" name="files" multiple />
+<input type="submit" value="Upload" />-->
+<script>
+    $(document).ready(function () {
+        $('#id_file').attr("multiple", "true");
+
+    })
+</script>
+<div class="row">
+    <div class="col-12 rounded border m-2 pd-2">
+        <form method="post" enctype="multipart/form-data" action="">{% csrf_token %}
+            {% crispy form %}
+            <!-- <input type="submit" value="Add Questions" /> -->
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 rounded border m-2 pb-2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Peer Tutor</th>
+                <th>Date In</th>
+                <th>Time In</th>
+                <th> Time Out </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in getAll %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <!-- <td>{{ f.reqdate|date:"D, d M, Y"}}</td> -->
+                <td>
+                     {{ f.pname}}
+                </td>   
+                <td>{{ f.datein }}</td>
+                <td>{{ f.timein }}</td>
+                <td>{{ f.timeout }}</td>
+               
+                <td>
+                        <a href="{% url 'attendance:attendance_detail' f.pk %}" class="btn btn-primary " target="_blank"><i class="far fa-file-alt"></i></a>
+                    </td>
+                <td>
+                    <form method="POST" action="{% url 'attendance:attendance_delete' f.pk %}">
+                        {% csrf_token %}
+                        <a href="{% url 'attendance:attendance_delete' f.pk %}" class="btn btn-danger confirm-delete"
+                            title="Delete" data-toggle="modal" data-target="#confirmDeleteModal"
+                            id="deleteButton{{f.pk}}">
+                            <!-- <a href="{% url 'peertotur:peertoturexp_delete' f.pk %}"
+                                class="btn btn-danger confirm-delete">-->
+                                <i class="far fa-trash-alt"></i>
+                        </a>
+                          <!--  <button type="submit" class="btn btn-danger "><i
+                                    class="far fa-trash-alt"></i></button>-->
+                      </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+{% endblock %}

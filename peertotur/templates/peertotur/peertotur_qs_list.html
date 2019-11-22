@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content%}
+{% load crispy_forms_tags %}
+<h2>Short paragraph</h2>
+<!--<form method="post" action="{% url 'peertotur:document_detail' %}" entype="multipart/form-data"> {% csrf_token %}
+<input type="file" name="files" multiple />
+<input type="submit" value="Upload" />-->
+<script>
+  $(document).ready(function(){
+    $('#id_file').attr("multiple","true");
+
+  })
+ </script>
+<form method="post" enctype="multipart/form-data" action="">{% csrf_token %}
+    {% crispy form %}
+ <!-- <input type="submit" value="Add Questions" /> -->
+
+</form>
+
+
+<!-- List of Uploads -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Peer Tutor</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for f in flist %}
+    <tr>
+      <th scope="row">{{ forloop.counter }} </th>
+      <td>{{ f.dateupload|date:"D, d M, Y"}}</td>
+      <td> {{ f.pname }}</td>
+      <td>
+        <a href="{% url 'peertotur:peertotur_qs_update' f.pk %}" class="btn btn-primary "
+        target="_blank"><i class="far fa-file-alt"></i></a>
+      </td>
+      <td>
+        <form method="POST" action="{% url 'peertotur:peertotur_qs_delete' f.pk %}">
+          {% csrf_token %}
+          <a href="{% url 'peertotur:peertotur_qs_delete' f.pk %}" class="btn btn-danger confirm-delete"
+              title="Delete" data-toggle="modal" data-target="#confirmDeleteModal"
+              id="deleteButton{{f.pk}}">
+              <!-- <a href="{% url 'peertotur:peertoturexp_delete' f.pk %}"
+                  class="btn btn-danger confirm-delete">-->
+                  <i class="far fa-trash-alt"></i>
+          </a>
+            <!--  <button type="submit" class="btn btn-danger "><i
+                      class="far fa-trash-alt"></i></button>-->
+        </form>
+      </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+{% if is_paginated %}
+<nav aria-label="Page navigation conatiner"></nav>
+<ul class="pagination justify-content-center">
+{% if page_obj.has_previous %}
+<li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+{% endif %}
+{% if page_obj.has_next %}
+<li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+{% endif %}
+</ul>
+</nav>
+</div>
+{% endif %}
+
+{% endblock %}
