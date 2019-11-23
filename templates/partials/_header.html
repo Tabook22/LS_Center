@@ -39,15 +39,22 @@
     <link href="{% static 'css/sticky-footer-navbar.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/peer.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
     <header>
-       
-       
-        <!-- Fixed navbar -->
-        <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-             <div class="container">
+        <!--Fixed navbar -->
+
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light" style="background-color:#fff !important;">
+            <div class="container">
+                <div class="top-menu d-flex flex-row row">
+                    <div class="top-menu-logo col-3"><img src="{% static 'img/hlogo.png' %}" class="img-fluid"></div>
+                    <div class="top-menu-title col-6 d-flex justify-content-center">Learning Support Center</div>
+                    <div class="top-menu-info col-3 d-flex justify-content-end"><img src="{% static 'img/hlogo2.png' %}" class="img-fluid"></div>
+                </div>
+            </div>
+            <!-- <div class="container">
 
             <a class="navbar-brand" href="#">Fixed navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -71,7 +78,6 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
-        </div>
-        </nav> -->
-   
+        </div> -->
+        </nav>
     </header>

@@ -1,3 +1,40 @@
+/* Header */
+/*************************************/
+.top-menu{
+    width:100%;
+}
+.top-menu-logo{
+
+    height:60px;
+
+}
+.top-menu-logo img{
+    max-height:56px !important;
+}
+.top-menu-title{
+    font-size:3rem;
+    height:60px;
+
+}
+.top-menu-info{
+
+    height:60px;
+
+}
+.top-menu-info img{
+    max-height:56px !important;
+}
+nav{
+    -webkit-box-shadow: 0px 9px 5px -6px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 9px 5px -6px rgba(0,0,0,0.4);
+box-shadow: 0px 9px 5px -6px rgba(0,0,0,0.4);
+}
 .sidenav{
     margin-top:60px;
+}
+.footer{
+    text-align:center;
+}
+.footer span{
+font-size:.5rem;
 }

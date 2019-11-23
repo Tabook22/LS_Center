@@ -33,14 +33,11 @@ class attendance_add(CreateView):
             peer.save()
             return HttpResponseRedirect(reverse_lazy('attendance:attendance_add'))
         return render(request, 'attendance/attendance_add.html', {'form': form})
-
 class attendance_list(ListView):
     model = PeerReg
     templat_name = "attendance/attendance_list.html"
     context_object_name = "attlst"
     queryset = PeerReg.objects.all()  # Default: Model.objects.all()
-
-
 class attendance_delete(DeleteView):
     model = PeerReg
     success_url = success_url = reverse_lazy("attendance:attendance_add")

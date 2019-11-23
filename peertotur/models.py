@@ -121,6 +121,7 @@ class StudentComments(models.Model):
 class Document(models.Model):
     pname = models.ForeignKey('Peertotur', on_delete=models.CASCADE)
     ftitle=models.CharField(verbose_name="file title", max_length=200, null=True, blank=True)
+    ftype=models.CharField(max_length=10, null=True, blank=True)
     file = models.FileField(
         upload_to='peertoturs/docs/', null=True, blank=True)
     dateupload = models.DateTimeField(auto_now_add=True)

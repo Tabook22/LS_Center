@@ -3,106 +3,114 @@
 <!-- Side Bar -->
 <style>
     #sidebar {
-       background-color:#595a5b;
-       
+        background-color: #595a5b;
+
     }
-    #sidebar ul{
-        width:100%;
+
+    #sidebar ul {
+        width: 100%;
     }
-    #sidebar .pl-2{
-       background-color:rgb(122, 122, 122)!important;
+
+    #sidebar .pl-2 {
+        background-color: rgb(122, 122, 122) !important;
     }
-    #sidebar .pl-4{
-        background-color:rgb(167, 165, 165)!important;
-     }
-     
-     #sidebar .pl-4>li{
-        padding-left:30px;
+
+    #sidebar .pl-4 {
+        background-color: rgb(167, 165, 165) !important;
     }
-    #sidebar .pl-2>li>a{
-        padding:30px;
+
+    #sidebar .pl-4>li {
+        padding-left: 30px;
     }
-    #sidebar .pl-2>li>a>i{
-        padding-right:10px;
+
+    #sidebar .pl-2>li>a {
+        padding: 30px;
     }
-    #sidebar ul>li{
-        border-bottom:1px solid #888;
+
+    #sidebar .pl-2>li>a>i {
+        padding-right: 10px;
     }
-    #sidebar ul>li>a{
-        color:#f1f1f1;
+
+    #sidebar ul>li {
+        border-bottom: 1px solid #888;
     }
-  
+
+    #sidebar ul>li>a {
+        color: #f1f1f1;
+    }
 </style>
 
-<li Begin page content -->
-<main role="main" class="flex-shrink-0">
-   <div class="container">
-         <div class="row">
-               <div class="col-3 collapse d-md-flex pt-2 min-vh-100" id="sidebar">
-                   <ul class="nav flex-column flex-nowrap">
-                       <li class="nav-item">
-                       <a class="nav-link" href="/">
-                       <i class="fa fa-dashboard"></i>Dashboard</a></li>
-                       <li class="nav-item">
-                           <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-list">Peertoturs </i></a>
-                           <div class="collapse" id="submenu1" aria-expanded="false">
-                               <ul class="flex-column pl-2 nav">
-                                   <li class="nav-item"><a class="nav-link py-0" href="/peertoturs/addpeertotur"><i class="fas fa-user-plus"></i>Add New Peer Totur</a></li>
+<!-- Begin page content -->
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <div class="row pt-2">
+                <div class="col-3 collapse d-md-flex pt-2 min-vh-100" id="sidebar">
+                    <ul class="nav flex-column flex-nowrap">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="fa fa-dashboard"></i>Dashboard</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse"
+                                data-target="#submenu1"><i class="fa fa-list">Peertoturs </i></a>
+                            <div class="collapse" id="submenu1" aria-expanded="false">
+                                <ul class="flex-column pl-2 nav">
+                                    <li class="nav-item"><a class="nav-link py-0" href="/peertoturs/addpeertotur"><i
+                                                class="fas fa-user-plus"></i>Add New Peer Totur</a></li>
                                     <li class="nav-item">
-                                    <a class="nav-link py-0" href="/peertoturs/peertotur_list">
-                                    <i class="fas fa-users"></i>Peer Toturs List</a></li>
-                                   <li class="nav-item">
-                                       <a class="nav-link py-0" href="/peertoturs/peertotur_experties">
-                                             <i class="fab fa-buromobelexperte"></i> expertise
-                                       </a>
-                                   </li>
-                                   <li class="nav-item">
-                                    <a class="nav-link py-0" href="/peertoturs/peertotur_qs_list">
-                                        <i class="far fa-question-circle"></i> Short Questions
-                                    </a>
-                                </li>
-                                <li class="nav-item">
+                                        <a class="nav-link py-0" href="/peertoturs/peertotur_list">
+                                            <i class="fas fa-users"></i>Peer Toturs List</a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-0" href="/peertoturs/peertotur_experties">
+                                            <i class="fab fa-buromobelexperte"></i> expertise
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-0" href="/peertoturs/peertotur_qs_list">
+                                            <i class="far fa-question-circle"></i> Short Questions
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link py-0" href="/attendance/attendance_add">
                                             <i class="fas fa-user-tag"></i> Attendance
                                         </a>
                                     </li>
-                                   <li class="nav-item">
-                                       <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1"><i class="fas fa-paperclip"></i>Attachment</a>
-                                       <div class="collapse" id="submenu1sub1" aria-expanded="false">
-                                           <ul class="flex-column nav pl-4">
-                                               <li class="nav-item">
-                                                   <a class="nav-link p-1" href="/peertoturs/document_detail">
-                                                      <i class="fas fa-file-upload"></i> Upload Peer Files
-                                                   </a>
-                                               </li>
-                                               <li class="nav-item">
-                                                   <a class="nav-link p-1" href="#">
-                                                         <i class="fas fa-file-image"></i> Upload Image
-                                                   </a>
-                                               </li>
-                                              <!--  <li class="nav-item">
+                                    <li class="nav-item">
+                                        <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse"
+                                            data-target="#submenu1sub1"><i class="fas fa-paperclip"></i>Attachment</a>
+                                        <div class="collapse" id="submenu1sub1" aria-expanded="false">
+                                            <ul class="flex-column nav pl-4">
+                                                <li class="nav-item">
+                                                    <a class="nav-link p-1" href="/peertoturs/document_detail">
+                                                        <i class="fas fa-file-upload"></i> Upload Peer Files
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link p-1" href="#">
+                                                        <i class="fas fa-file-image"></i> Upload Image
+                                                    </a>
+                                                </li>
+                                                <!--  <li class="nav-item">
                                                    <a class="nav-link p-1" href="#">
                                                        <i class="fa fa-fw fa-compass"></i> Areas
                                                    </a>
                                                </li> -->
-                                           </ul>
-                                       </div>
-                                   </li>
-                               </ul>
-                           </div>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="#">Reservation</a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                       <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
-                   </ul>
-               </div>
-               <div class="col pt-2">
-                     {% block content %}
-                     {% endblock %}
-               </div>
-           </div>
-       </div>
-   </div>
-</main>
-{% include "partials/_footer.html" %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reservation</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col pt-2">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include "partials/_footer.html" %}

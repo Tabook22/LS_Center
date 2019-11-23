@@ -280,16 +280,24 @@ class document_detail(CreateView):
 
     def post(self, request, *args, **kwargs):
         print("-----allah----")
+        File_Types = ['png', 'jpg', 'jpeg','doc','docx','pdf']
         form = self.form_class(request.POST, request.FILES)
         if form.is_valid():
             print("-----in the name of allah-----")
-            # myfile = request.FILES['file']
-            # fs = FileSystemStorage()
-            # filename = fs.save(myfile.name, myfile)
-            # uploaded_file_url = fs.url(filename)
-            # print(uploaded_file_url)
-            form.save()
-            return HttpResponseRedirect(self.success_url)
+            myfile = request.FILES['file']
+            fs = FileSystemStorage()
+            filename = fs.save(myfile.name, myfile)
+            uploaded_file_url = fs.url(filename)
+            file_type = uploaded_file_url.split('.')[-1]
+            print(file_type)
+            file_type = file_type.lower()
+            if file_type not in File_Types:
+                form = self.form_class()
+                getAll = Document.objects.all()
+                return render(request, self.template_name, {'form': form, 'flist': getAll})
+            else:
+                form.save()
+                return HttpResponseRedirect(self.success_url)
         else:
             return render(request, self.template_name, {'form': form})
 class document_detail_delete(DeleteView):
